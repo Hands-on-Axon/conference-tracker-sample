@@ -1,0 +1,31 @@
+POST http://localhost:8080/conference
+Content-Type: application/json
+
+{
+  "name": "DrivUn",
+  "location": {
+    "country": "The Netherlands",
+    "city": "Amsterdam",
+    "online": false
+  },
+  "website": "https://drivUn.co"
+}
+
+###
+POST http://localhost:8080/conference
+Content-Type: application/json
+
+{
+  "name": "AxonIQCon - The Future is Event-Driven",
+  "location": {
+    "country": "The Netherlands",
+    "city": "Amsterdam",
+    "online": false
+  },
+  "website": "https://www.axoniq.io/axoniq-conference-2023"
+}
+
+###
+GET http://localhost:8080/conference
+
+###
