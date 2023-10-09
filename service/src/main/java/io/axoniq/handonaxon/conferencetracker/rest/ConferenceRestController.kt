@@ -1,7 +1,9 @@
 package io.axoniq.handonaxon.conferencetracker.rest
 
 import io.axoniq.handonaxon.conferencetracker.api.AddConferenceCommand
+import io.axoniq.handonaxon.conferencetracker.api.AddConferenceEditionCommand
 import io.axoniq.handonaxon.conferencetracker.api.AllConferencesQuery
+import io.axoniq.handonaxon.conferencetracker.api.ScheduleConferenceEditionCommand
 import org.axonframework.commandhandling.gateway.CommandGateway
 import org.axonframework.messaging.responsetypes.ResponseType
 import org.axonframework.messaging.responsetypes.ResponseTypes
@@ -22,6 +24,15 @@ class ConferenceRestController(
         return commandGateway.send(cmd)
     }
 
+    @PostMapping("/conference/edition")
+    fun defineEdition(@RequestBody cmd: AddConferenceEditionCommand): CompletableFuture<String> {
+        return commandGateway.send(cmd);
+    }
+
+    @PostMapping("/conference/edition/schedule")
+    fun scheduleEdition(@RequestBody cmd: ScheduleConferenceEditionCommand): CompletableFuture<String> {
+        return commandGateway.send(cmd);
+    }
 
     @GetMapping("/conference")
     fun listConferences(): List<String> {

@@ -26,6 +26,29 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:8080/conference/edition
+Content-Type: application/json
+
+{
+  "conferenceId": "03b88cf5-953f-4ead-b248-5ee4637866cc",
+  "year": 2024,
+  "startDate": null,
+  "venue": null
+
+}
+
+###
+POST http://localhost:8080/conference/edition/schedule
+Content-Type: application/json
+
+{
+  "conferenceId": "03b88cf5-953f-4ead-b248-5ee4637866cc",
+  "editionId" : "8a9cb818",
+  "startDate": "2024-01-29"
+}
+
+
+###
 GET http://localhost:8080/conference
 
 ###
