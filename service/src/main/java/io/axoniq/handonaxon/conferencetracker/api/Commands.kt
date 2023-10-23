@@ -7,7 +7,8 @@ data class AddConferenceCommand(
     val name: String,
     val website: String,
     val location: ConferenceLocation,
-    val family: String?
+    val family: String?,
+    val ownerEmail: String
 )
 
 data class AddConferenceEditionCommand(
@@ -15,7 +16,8 @@ data class AddConferenceEditionCommand(
     val conferenceId: String,
     val year: Int,
     val startDate: LocalDate?,
-    val venue: VenueLocation?
+    val venue: VenueLocation?,
+    val ownerEmail: String
 )
 
 data class ScheduleConferenceEditionCommand(

@@ -7,7 +7,8 @@ data class ConferenceAddedEvent(
     val name: String,
     val website: String,
     val location: ConferenceLocation,
-    val family: String?
+    val family: String?,
+    val ownerEmail: String
 )
 
 data class ConferenceEditionAddedEvent(

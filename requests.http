@@ -8,7 +8,8 @@ Content-Type: application/json
     "city": "Amsterdam",
     "online": false
   },
-  "website": "https://drivUn.co"
+  "website": "https://drivUn.co",
+  "ownerEmail": "mitchie@gmail.com"
 }
 
 ###
@@ -22,7 +23,8 @@ Content-Type: application/json
     "city": "Amsterdam",
     "online": false
   },
-  "website": "https://www.axoniq.io/axoniq-conference-2023"
+  "website": "https://www.axoniq.io/axoniq-conference-2023",
+  "ownerEmail": "notMitchie@gmail.com"
 }
 
 ###
@@ -30,10 +32,11 @@ POST http://localhost:8080/conference/edition
 Content-Type: application/json
 
 {
-  "conferenceId": "03b88cf5-953f-4ead-b248-5ee4637866cc",
-  "year": 2024,
+  "conferenceId": "cade1439-6eed-4b86-b294-0885c76edfb1",
+  "year": 2028,
   "startDate": null,
-  "venue": null
+  "venue": null,
+  "ownerEmail": "mitchie@gmail.com"
 
 }
 
