@@ -63,7 +63,6 @@ class Conference() {
         return editionId;
     }
 
-
     @EventSourcingHandler
     fun handle(event: ConferenceAddedEvent) {
         logger.info("{} Processing ConferenceAddedEvent", getAggregatePhaseIcon())

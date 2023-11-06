@@ -1,0 +1,20 @@
+version: '3.8'
+name: hands-on-axon
+services:
+  axonserver:
+    platform: linux/arm64
+    image: axoniq/axonserver:latest-dev
+    hostname: hands-on-axonserver
+    environment:
+      - SERVER_PORT=8024
+      - AXONIQ_AXONSERVER_PORT=8124
+    volumes:
+      - axonserver-log:/axonserver/log
+      - axonserver-data:/axonserver/data
+    ports:
+      - '8024:8024'
+      - '8124:8124'
+
+volumes:
+  axonserver-log:
+  axonserver-data:
