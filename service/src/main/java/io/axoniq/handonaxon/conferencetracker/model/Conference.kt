@@ -10,8 +10,10 @@ import org.axonframework.modelling.command.AggregateMember
 import org.axonframework.modelling.command.ForwardMatchingInstances
 import org.axonframework.spring.stereotype.Aggregate
 import org.slf4j.LoggerFactory
+import org.springframework.context.annotation.Profile
 import java.util.*
 
+@Profile("command")
 @Aggregate
 class Conference() {
     @AggregateIdentifier

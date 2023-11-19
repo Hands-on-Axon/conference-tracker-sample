@@ -8,6 +8,7 @@ services:
     environment:
       - SERVER_PORT=8024
       - AXONIQ_AXONSERVER_PORT=8124
+      - AXONIQ_AXONSERVER_STANDALONE=true
     volumes:
       - axonserver-log:/axonserver/log
       - axonserver-data:/axonserver/data
@@ -15,6 +16,20 @@ services:
       - '8024:8024'
       - '8124:8124'
 
+  postgres:
+    platform: linux/arm64
+    image: postgres:latest
+    hostname: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=conference-tracker
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
 volumes:
+  postgres-data:
   axonserver-log:
   axonserver-data:

@@ -4,21 +4,27 @@ import io.axoniq.handonaxon.conferencetracker.api.AllConferencesQuery
 import io.axoniq.handonaxon.conferencetracker.api.ConferenceAddedEvent
 import org.axonframework.eventhandling.EventHandler
 import org.axonframework.queryhandling.QueryHandler
+import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Component
 
+@Profile("query")
 @Component
-class ConferenceListProjection {
-
-    private val conferences = mutableListOf<String>()
+class ConferenceListProjection(val repository: ConferenceRepository) {
 
     @EventHandler
     fun handle(event : ConferenceAddedEvent) {
-        conferences.add(event.name)
+        repository.save(
+            Conference(
+                conferenceId = event.conferenceId,
+                name = event.name,
+                website = event.website
+            )
+        )
     }
 
 
     @QueryHandler
     fun handle(query : AllConferencesQuery): List<String> {
-        return conferences.toList()
+        return repository.findAll().map { it.name }
     }
 }
